@@ -45,7 +45,7 @@ img {
 }
 
 .product-price::before {
-  content: "GHC";
+  content: "GHC ";
 }
 
 .product-price {
@@ -56,10 +56,11 @@ img {
   color: grey;
 }
 
-.item-size {
+.stock {
   font-size: 25px;
   color: #fad24a;
   padding: 5px;
+  margin-left: 5px;
   background-color: white;
   border: 1px solid #fad24a;
   border-radius: 50%;
