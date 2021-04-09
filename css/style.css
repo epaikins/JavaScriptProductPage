@@ -1,0 +1,121 @@
+/* Product Info Starts */
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.product {
+  margin: 20px;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px 0.1px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 200px;
+  height: 150px;
+}
+
+img {
+  width: inherit;
+  height: inherit;
+}
+
+.product-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  color: #fad24a;
+}
+
+#product-description {
+  display: block;
+}
+
+#product-stock {
+  display: inline-block;
+}
+
+.subtitle {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: grey;
+}
+
+.product-price::before {
+  content: "GHC";
+}
+
+.product-price {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: lighter;
+  font-family: serif;
+  color: grey;
+}
+
+.item-size {
+  font-size: 25px;
+  color: #fad24a;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #fad24a;
+  border-radius: 50%;
+}
+
+hr {
+  width: 200px;
+}
+
+.add-btn {
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  background-color: #fad24a;
+  color: whitesmoke;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+/* Product Info Ends */
+
+/* Counter Starts */
+.down,
+.up {
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
+  color: #fad24a;
+  border: 1px solid #fad24a;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.down:hover,
+.up:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #fad24a;
+}
+
+.quantity-field {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid #fad24a;
+  color: #fad24a;
+}
+
+.quantity-field:focus {
+  outline: none;
+  border: 1px solid #fad24a;
+}
+
+/* Counter Ends */
