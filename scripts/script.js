@@ -7,11 +7,6 @@ class Product {
         this.imageUrl = imageUrl;
     }
 
-    // The remove product method removes a product to the cart
-    removeProduct() {
-
-    }
-
     // The display method shows the product details on the home page
     display() {
         let main = document.querySelector('.main');
@@ -20,6 +15,16 @@ class Product {
         let productDiv = document.createElement('div')
         productDiv.classList.add('product');
         main.appendChild(productDiv);
+
+        // Create product delete div
+        let deleteDiv = document.createElement('div')
+        deleteDiv.classList.add('delete-image');
+        productDiv.appendChild(deleteDiv);
+
+        // Create image tag
+        let deletes = document.createElement('img');
+        deletes.src = "assets/trash-bin.svg";
+        deleteDiv.appendChild(deletes);
 
         // Create product image div
         let imageDiv = document.createElement('div')
@@ -146,6 +151,20 @@ class Sweater extends Product {
         }
     }
 
+    // The remove product method removes a product to the cart
+    removeProduct() {
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Sweater") {
+                parent.style.display = "none";
+            }
+
+        }
+    }
+
     display() {
         super.display();
 
@@ -155,6 +174,8 @@ class Sweater extends Product {
             let parent = title.parentNode;
             if (title.innerText === "Sweater") {
                 let addButton = parent.querySelector('.add-btn');
+                let deletes = parent.querySelector('.delete-image');
+                deletes.addEventListener('click', this.removeProduct);
                 addButton.addEventListener('click', this.addProduct);
             }
         }
@@ -192,6 +213,20 @@ class Trouser extends Product {
         }
     }
 
+    // The remove product method removes a product to the cart
+    removeProduct() {
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Trouser") {
+                parent.style.display = "none";
+            }
+
+        }
+    }
+
     display() {
         super.display();
 
@@ -201,6 +236,8 @@ class Trouser extends Product {
             let parent = title.parentNode;
             if (title.innerText === "Trouser") {
                 let addButton = parent.querySelector('.add-btn');
+                let deletes = parent.querySelector('.delete-image');
+                deletes.addEventListener('click', this.removeProduct);
                 addButton.addEventListener('click', this.addProduct);
             }
         }
@@ -237,6 +274,20 @@ class Shorts extends Product {
         }
     }
 
+    // The remove product method removes a product to the cart
+    removeProduct() {
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shorts") {
+                parent.style.display = "none";
+            }
+
+        }
+    }
+
     display() {
         super.display();
 
@@ -246,6 +297,8 @@ class Shorts extends Product {
             let parent = title.parentNode;
             if (title.innerText === "Shorts") {
                 let addButton = parent.querySelector('.add-btn');
+                let deletes = parent.querySelector('.delete-image');
+                deletes.addEventListener('click', this.removeProduct);
                 addButton.addEventListener('click', this.addProduct);
             }
         }
@@ -282,6 +335,20 @@ class Shirt extends Product {
         }
     }
 
+    // The remove product method removes a product to the cart
+    removeProduct() {
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shirt") {
+                parent.style.display = "none";
+            }
+
+        }
+    }
+
     display() {
         super.display();
 
@@ -291,6 +358,8 @@ class Shirt extends Product {
             let parent = title.parentNode;
             if (title.innerText === "Shirt") {
                 let addButton = parent.querySelector('.add-btn');
+                let deletes = parent.querySelector('.delete-image');
+                deletes.addEventListener('click', this.removeProduct);
                 addButton.addEventListener('click', this.addProduct);
             }
         }
