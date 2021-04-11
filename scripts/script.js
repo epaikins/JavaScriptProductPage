@@ -165,6 +165,41 @@ class Sweater extends Product {
         }
     }
 
+    increase() {
+        let titles = document.querySelectorAll('.product-title');
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Sweater") {
+                let quantity = parent.querySelector('.quantity-field');
+                let stock = parent.querySelector('.stock');
+
+                if (quantity.value < Number(stock.textContent)) {
+                    quantity.value = Number(quantity.value) + 1;
+                }
+            }
+
+        }
+
+    }
+
+
+    decrease() {
+        let titles = document.querySelectorAll('.product-title');
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Sweater") {
+                let quantity = parent.querySelector('.quantity-field');
+                if (quantity.value > 0) {
+                    quantity.value = Number(quantity.value) - 1;
+                }
+            }
+
+        }
+
+    }
+
     display() {
         super.display();
 
@@ -175,6 +210,10 @@ class Sweater extends Product {
             if (title.innerText === "Sweater") {
                 let addButton = parent.querySelector('.add-btn');
                 let deletes = parent.querySelector('.delete-image');
+                let up = parent.querySelector('.up');
+                let down = parent.querySelector('.down');
+                up.addEventListener('click', this.increase);
+                down.addEventListener('click', this.decrease);
                 deletes.addEventListener('click', this.removeProduct);
                 addButton.addEventListener('click', this.addProduct);
             }
@@ -227,6 +266,41 @@ class Trouser extends Product {
         }
     }
 
+    increase() {
+        let titles = document.querySelectorAll('.product-title');
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Trouser") {
+                let quantity = parent.querySelector('.quantity-field');
+                let stock = parent.querySelector('.stock');
+
+                if (quantity.value < Number(stock.textContent)) {
+                    quantity.value = Number(quantity.value) + 1;
+                }
+            }
+
+        }
+
+    }
+
+
+    decrease() {
+        let titles = document.querySelectorAll('.product-title');
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Trouser") {
+                let quantity = parent.querySelector('.quantity-field');
+                if (quantity.value > 0) {
+                    quantity.value = Number(quantity.value) - 1;
+                }
+            }
+
+        }
+
+    }
+
     display() {
         super.display();
 
@@ -237,6 +311,10 @@ class Trouser extends Product {
             if (title.innerText === "Trouser") {
                 let addButton = parent.querySelector('.add-btn');
                 let deletes = parent.querySelector('.delete-image');
+                let up = parent.querySelector('.up');
+                let down = parent.querySelector('.down');
+                up.addEventListener('click', this.increase);
+                down.addEventListener('click', this.decrease);
                 deletes.addEventListener('click', this.removeProduct);
                 addButton.addEventListener('click', this.addProduct);
             }
@@ -288,6 +366,41 @@ class Shorts extends Product {
         }
     }
 
+    increase() {
+        let titles = document.querySelectorAll('.product-title');
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shorts") {
+                let quantity = parent.querySelector('.quantity-field');
+                let stock = parent.querySelector('.stock');
+
+                if (quantity.value < Number(stock.textContent)) {
+                    quantity.value = Number(quantity.value) + 1;
+                }
+            }
+
+        }
+
+    }
+
+
+    decrease() {
+        let titles = document.querySelectorAll('.product-title');
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shorts") {
+                let quantity = parent.querySelector('.quantity-field');
+                if (quantity.value > 0) {
+                    quantity.value = Number(quantity.value) - 1;
+                }
+            }
+
+        }
+
+    }
+
     display() {
         super.display();
 
@@ -298,6 +411,10 @@ class Shorts extends Product {
             if (title.innerText === "Shorts") {
                 let addButton = parent.querySelector('.add-btn');
                 let deletes = parent.querySelector('.delete-image');
+                let up = parent.querySelector('.up');
+                let down = parent.querySelector('.down');
+                up.addEventListener('click', this.increase);
+                down.addEventListener('click', this.decrease);
                 deletes.addEventListener('click', this.removeProduct);
                 addButton.addEventListener('click', this.addProduct);
             }
@@ -349,6 +466,42 @@ class Shirt extends Product {
         }
     }
 
+
+    increase() {
+        let titles = document.querySelectorAll('.product-title');
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shirt") {
+                let quantity = parent.querySelector('.quantity-field');
+                let stock = parent.querySelector('.stock');
+
+                if (quantity.value < Number(stock.textContent)) {
+                    quantity.value = Number(quantity.value) + 1;
+                }
+            }
+
+        }
+
+    }
+
+
+    decrease() {
+        let titles = document.querySelectorAll('.product-title');
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shirt") {
+                let quantity = parent.querySelector('.quantity-field');
+                if (quantity.value > 0) {
+                    quantity.value = Number(quantity.value) - 1;
+                }
+            }
+
+        }
+
+    }
+
     display() {
         super.display();
 
@@ -359,6 +512,10 @@ class Shirt extends Product {
             if (title.innerText === "Shirt") {
                 let addButton = parent.querySelector('.add-btn');
                 let deletes = parent.querySelector('.delete-image');
+                let up = parent.querySelector('.up');
+                let down = parent.querySelector('.down');
+                up.addEventListener('click', this.increase);
+                down.addEventListener('click', this.decrease);
                 deletes.addEventListener('click', this.removeProduct);
                 addButton.addEventListener('click', this.addProduct);
             }

@@ -8,14 +8,14 @@
 
 body {
   font-family: montserrat;
-  width: 100%;
 }
 
 nav {
+  position: fixed;
   background: white;
-  height: 80px;
   width: 100%;
-  z-index: 100%;
+  height: 80px;
+  z-index: 999;
   border-bottom: 1px solid rgb(128, 128, 128);
   margin-bottom: 40px;
 }
@@ -103,6 +103,8 @@ nav .nav-list .nav-list-item a {
   display: none;
 }
 
+
+
 @media (max-width: 952px) {
   label.logo {
     font-size: 30px;
@@ -112,10 +114,19 @@ nav .nav-list .nav-list-item a {
     font-size: 16px;
   }
 }
+
+
+
+
 @media (max-width: 858px) {
   .checkbtn {
     display: block;
   }
+
+  nav {
+    width: 100%;
+  }
+
   .nav-list {
     position: fixed;
     width: 100%;
@@ -148,6 +159,45 @@ nav .nav-list .nav-list-item a {
     padding-left: 0px;
   }
 }
+
+@media (max-width: 552px) {
+  .checkbtn {
+    display: block;
+  }
+
+  .nav-list {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav .nav-list .nav-list-item {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav .nav-list .nav-list-item a {
+    font-size: 20px;
+  }
+  .nav-list-item a:hover {
+    background: none;
+    color: #fad24a;
+  }
+  #check:checked ~ .nav-list {
+    left: 0;
+    z-index: 999;
+  }
+
+  label.logo a {
+    font-size: 20px;
+    padding: 0px;
+  }
+}
+
 section {
   background: url(bg1.jpg) no-repeat;
   background-size: cover;
