@@ -73,13 +73,26 @@ hr {
 .add-btn {
   font-size: 20px;
   padding: 10px;
-  border: none;
-  background-color: #fad24a;
-  color: whitesmoke;
+  border: 2px solid #fad24a;
+  background-color: white;
+  color: #fad24a;
   margin-top: 10px;
   margin-bottom: 10px;
   width: 200px;
 }
+
+.add-btn:hover {
+  background-color: #fad24a;
+  color: white;
+  cursor: pointer;
+}
+
+.add-btn:focus {
+  background-color: #fad24a;
+  color: white;
+  outline: none;
+}
+
 /* Product Info Ends */
 
 /* Counter Starts */

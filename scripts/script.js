@@ -7,11 +7,6 @@ class Product {
         this.imageUrl = imageUrl;
     }
 
-    // The add product method adds a product to the cart
-    addProduct() {
-
-    }
-
     // The remove product method removes a product to the cart
     removeProduct() {
 
@@ -60,6 +55,7 @@ class Product {
 
         // Create stock description
         let stock = document.createElement('h3');
+        stock.classList.add('stock-body');
         productDiv.appendChild(stock);
 
         // Create stock description title
@@ -102,7 +98,6 @@ class Product {
         counter.setAttribute('value', '1');
         counter.setAttribute('max', '10');
         counter.classList.add('quantity-field');
-
         counterDiv.appendChild(counter);
 
         // Create counter up
@@ -111,19 +106,209 @@ class Product {
         counterUp.textContent = '+';
         counterDiv.appendChild(counterUp);
 
-        // Create Add button
+        // // Create Add button
         let addButton = document.createElement('input');
         addButton.setAttribute('type', 'submit');
         addButton.setAttribute('value', 'ADD TO BAG');
+        // addButton.setAttribute('onclick', 'addProduct()');
+        // addButton.addEventListener('click', this.addProduct);
         addButton.classList.add('add-btn');
         productDiv.appendChild(addButton);
     }
 }
 
-let product1 = new Product("Polo Shirt", 24, 12, "Best dress", "assets/dress1.png");
-let product2 = new Product("Sweater", 24, 12, "Best dress", "assets/dress1.png");
-let product3 = new Product("Sweater", 24, 12, "Best dress", "assets/dress1.png");
 
+class Sweater extends Product {
+
+    // The add product method adds a product to the cart
+    // The add product method adds a product to the cart
+    addProduct() {
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let cart = document.querySelector('#shop-cart');
+            let parent = title.parentNode;
+
+            if (title.innerText === "Sweater") {
+                let quantity = parent.querySelector('.quantity-field');
+                let stock = parent.querySelector('.stock');
+                if (Number(stock.textContent) > 0) {
+                    if (Number(quantity.value) <= Number(stock.textContent)) {
+                        stock.textContent = Number(stock.textContent) - Number(quantity.value);
+                        cart.textContent = Number(cart.textContent) + Number(quantity.value);
+                    } else {
+                        alert(`Please the quantity selected is more than what is available.`)
+                    }
+                } else {
+                    alert(`Please the stock for Sweater is empty`)
+                }
+            };
+        }
+    }
+
+    display() {
+        super.display();
+
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let parent = title.parentNode;
+            if (title.innerText === "Sweater") {
+                let addButton = parent.querySelector('.add-btn');
+                addButton.addEventListener('click', this.addProduct);
+            }
+        }
+
+    }
+
+}
+
+
+class Trouser extends Product {
+
+    // The add product method adds a product to the cart
+    // The add product method adds a product to the cart
+    addProduct() {
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let cart = document.querySelector('#shop-cart');
+            let parent = title.parentNode;
+
+            if (title.innerText === "Trouser") {
+                let quantity = parent.querySelector('.quantity-field');
+                let stock = parent.querySelector('.stock');
+                if (Number(stock.textContent) > 0) {
+                    if (Number(quantity.value) <= Number(stock.textContent)) {
+                        stock.textContent = Number(stock.textContent) - Number(quantity.value);
+                        cart.textContent = Number(cart.textContent) + Number(quantity.value);
+                    } else {
+                        alert(`Please the quantity selected is more than what is available.`)
+                    }
+                } else {
+                    alert(`Please the stock for Trouser is empty`)
+                }
+            };
+        }
+    }
+
+    display() {
+        super.display();
+
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let parent = title.parentNode;
+            if (title.innerText === "Trouser") {
+                let addButton = parent.querySelector('.add-btn');
+                addButton.addEventListener('click', this.addProduct);
+            }
+        }
+
+    }
+
+}
+
+class Shorts extends Product {
+
+    // The add product method adds a product to the cart
+    // The add product method adds a product to the cart
+    addProduct() {
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let cart = document.querySelector('#shop-cart');
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shorts") {
+                let quantity = parent.querySelector('.quantity-field');
+                let stock = parent.querySelector('.stock');
+                if (Number(stock.textContent) > 0) {
+                    if (Number(quantity.value) <= Number(stock.textContent)) {
+                        stock.textContent = Number(stock.textContent) - Number(quantity.value);
+                        cart.textContent = Number(cart.textContent) + Number(quantity.value);
+                    } else {
+                        alert(`Please the quantity selected is more than what is available.`)
+                    }
+                } else {
+                    alert(`Please the stock for Shorts is empty`)
+                }
+            };
+        }
+    }
+
+    display() {
+        super.display();
+
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let parent = title.parentNode;
+            if (title.innerText === "Shorts") {
+                let addButton = parent.querySelector('.add-btn');
+                addButton.addEventListener('click', this.addProduct);
+            }
+        }
+
+    }
+
+}
+
+class Shirt extends Product {
+
+    // The add product method adds a product to the cart
+    // The add product method adds a product to the cart
+    addProduct() {
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let cart = document.querySelector('#shop-cart');
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shirt") {
+                let quantity = parent.querySelector('.quantity-field');
+                let stock = parent.querySelector('.stock');
+                if (Number(stock.textContent) > 0) {
+                    if (Number(quantity.value) <= Number(stock.textContent)) {
+                        stock.textContent = Number(stock.textContent) - Number(quantity.value);
+                        cart.textContent = Number(cart.textContent) + Number(quantity.value);
+                    } else {
+                        alert(`Please the quantity selected is more than what is available.`)
+                    }
+                } else {
+                    alert(`Please the stock for Shirt is empty`)
+                }
+            };
+        }
+    }
+
+    display() {
+        super.display();
+
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let parent = title.parentNode;
+            if (title.innerText === "Shirt") {
+                let addButton = parent.querySelector('.add-btn');
+                addButton.addEventListener('click', this.addProduct);
+            }
+        }
+
+    }
+
+}
+
+
+
+let product1 = new Sweater("Sweater", 23.23, 10, "Best product to buy for summer", "assets/dress1.png")
 product1.display();
+
+let product2 = new Trouser("Trouser", 53.23, 20, "Best product to buy for summer", "assets/trouser.jpg")
 product2.display();
+
+let product3 = new Shorts("Shorts", 3.23, 8, "Best product to buy for summer", "assets/shorts.jpg")
 product3.display();
+
+let product4 = new Shirt("Shirt", 29.23, 4, "Best product to buy for summer", "assets/shirt.jpg")
+product4.display();
