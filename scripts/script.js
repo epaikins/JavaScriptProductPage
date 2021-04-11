@@ -159,7 +159,9 @@ class Sweater extends Product {
             let parent = title.parentNode;
 
             if (title.innerText === "Sweater") {
-                parent.style.display = "none";
+                if (confirm("Are you sure you want to delete this item?")) {
+                    parent.style.display = "none";
+                }
             }
 
         }
@@ -260,7 +262,9 @@ class Trouser extends Product {
             let parent = title.parentNode;
 
             if (title.innerText === "Trouser") {
-                parent.style.display = "none";
+                if (confirm("Are you sure you want to delete this item?")) {
+                    parent.style.display = "none";
+                }
             }
 
         }
@@ -360,7 +364,9 @@ class Shorts extends Product {
             let parent = title.parentNode;
 
             if (title.innerText === "Shorts") {
-                parent.style.display = "none";
+                if (confirm("Are you sure you want to delete this item?")) {
+                    parent.style.display = "none";
+                }
             }
 
         }
@@ -460,7 +466,9 @@ class Shirt extends Product {
             let parent = title.parentNode;
 
             if (title.innerText === "Shirt") {
-                parent.style.display = "none";
+                if (confirm("Are you sure you want to delete this item?")) {
+                    parent.style.display = "none";
+                }
             }
 
         }
