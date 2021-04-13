@@ -535,14 +535,14 @@ class Shirt extends Product {
 
 
 
-let product1 = new Sweater("Sweater", 23.23, 10, "Best product to buy for summer", "assets/dress1.png")
+let product1 = new Sweater("Sweater", 23.23, 10, "Hanes Men's Comfortwash Garment Dyed Fleece Sweatshirt", "assets/dress1.png")
 product1.display();
 
-let product2 = new Trouser("Trouser", 53.23, 20, "Best product to buy for summer", "assets/trouser.jpg")
+let product2 = new Trouser("Trouser", 53.23, 20, "Haggar Men's Casual Classic Fit Denim Trouser Pant-Regular", "assets/trouser.jpg")
 product2.display();
 
-let product3 = new Shorts("Shorts", 3.23, 8, "Best product to buy for summer", "assets/shorts.jpg")
+let product3 = new Shorts("Shorts", 3.23, 8, "Wrangler Authentics Men's Classic Relaxed Fit Stretch Cargo Short", "assets/shorts.jpg")
 product3.display();
 
-let product4 = new Shirt("Shirt", 29.23, 4, "Best product to buy for summer", "assets/shirt.jpg")
+let product4 = new Shirt("Shirt", 29.23, 4, "Lacoste Mens Classic 3 Pack Pique Slim Fit Short Sleeve Polo Shirt", "assets/shirt.jpg")
 product4.display();
