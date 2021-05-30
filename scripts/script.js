@@ -533,6 +533,111 @@ class Shirt extends Product {
 
 }
 
+class Shirt2 extends Product {
+
+    // The add product method adds a product to the cart
+    // The add product method adds a product to the cart
+    addProduct() {
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let cart = document.querySelector('#shop-cart');
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shirt2") {
+                let quantity = parent.querySelector('.quantity-field');
+                let stock = parent.querySelector('.stock');
+                if (Number(stock.textContent) > 0) {
+                    if (Number(quantity.value) <= Number(stock.textContent)) {
+                        stock.textContent = Number(stock.textContent) - Number(quantity.value);
+                        cart.textContent = Number(cart.textContent) + Number(quantity.value);
+                    } else {
+                        alert(`Please the quantity selected is more than what is available.`)
+                    }
+                } else {
+                    alert(`Please the stock for Shirt is empty`)
+                }
+            };
+        }
+    }
+
+    // The remove product method removes a product to the cart
+    removeProduct() {
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shirt2") {
+                if (confirm("Are you sure you want to delete this item?")) {
+                    parent.style.display = "none";
+                }
+            }
+
+        }
+    }
+
+
+    increase() {
+        let titles = document.querySelectorAll('.product-title');
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shirt2") {
+                let quantity = parent.querySelector('.quantity-field');
+                let stock = parent.querySelector('.stock');
+
+                if (quantity.value < Number(stock.textContent)) {
+                    quantity.value = Number(quantity.value) + 1;
+                }
+            }
+
+        }
+
+    }
+
+
+    decrease() {
+        let titles = document.querySelectorAll('.product-title');
+        for (let title of titles) {
+            let parent = title.parentNode;
+
+            if (title.innerText === "Shirt2") {
+                let quantity = parent.querySelector('.quantity-field');
+                if (quantity.value > 0) {
+                    quantity.value = Number(quantity.value) - 1;
+                }
+            }
+
+        }
+
+    }
+
+    display() {
+        super.display();
+
+        let titles = document.querySelectorAll('.product-title');
+
+        for (let title of titles) {
+            let parent = title.parentNode;
+            if (title.innerText === "Shirt2") {
+                let addButton = parent.querySelector('.add-btn');
+                let deletes = parent.querySelector('.delete-image');
+                let up = parent.querySelector('.up');
+                let down = parent.querySelector('.down');
+                up.addEventListener('click', this.increase);
+                down.addEventListener('click', this.decrease);
+                deletes.addEventListener('click', this.removeProduct);
+                addButton.addEventListener('click', this.addProduct);
+            }
+        }
+
+    }
+
+}
+
+
+
 
 
 let product1 = new Sweater("Sweater", 23.23, 10, "Hanes Men's Comfortwash Garment Dyed Fleece Sweatshirt", "assets/dress1.png")
@@ -546,3 +651,6 @@ product3.display();
 
 let product4 = new Shirt("Shirt", 29.23, 4, "Lacoste Mens Classic 3 Pack Pique Slim Fit Short Sleeve Polo Shirt", "assets/shirt.jpg")
 product4.display();
+
+let product5 = new Shirt2("Shirt2", 29.23, 4, "Customized shirt", "assets/shirt2.png")
+product5.display();
